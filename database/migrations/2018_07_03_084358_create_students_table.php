@@ -31,6 +31,7 @@ class CreateStudentsTable extends Migration
             $table->string('mazhab');
             $table->string('address');
             $table->integer('chandomin_bachehye_khanevade');
+            $table->string('email');
             $table->timestamps();
         });
     }

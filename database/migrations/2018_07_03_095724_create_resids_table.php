@@ -15,12 +15,15 @@ class CreateResidsTable extends Migration
     {
         Schema::create('resids', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name_payer');
+            $table->integer('amount');
+            $table->string('zarin_pal_RefId');
+            $table->string('zarin_pal_Message');
             $table->integer('student_id');
             $table->integer('nobate_pardakht');
             $table->string('fish_ya_check');
             $table->string('bank');
             $table->string('code_shobe')->nullable();
-            $table->string('resgit')->nullable();
             $table->date('tarikh_pardakht');
             $table->timestamps();
         });
