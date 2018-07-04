@@ -1,0 +1,169 @@
+@font-face {
+    font-family: "vazir";
+    font-style: normal;
+    font-weight: 100;
+    src: url("fonts/vazir/Vazir.eot?") format("eot"), url("fonts/vazir/Vazir.woff") format("woff"), url("fonts/vazir/Vazir.ttf") format("truetype"), url("fonts/vazir/Vazir.svg#vazir") format("svg")
+}
+@font-face {
+    font-family: "vazir";
+    font-style: normal;
+    font-weight: bold;
+    src: url("fonts/vazir/Vazir-Bold.eot?") format("eot"), url("fonts/vazir/Vazir-Bold.woff") format("woff"), url("fonts/vazir/Vazir-Bold.ttf") format("truetype"), url("fonts/vazir/Vazir-Bold.svg#vazir") format("svg")
+}
+@font-face {
+    font-family: "iransans";
+    font-style: normal;
+    font-weight: 300;
+    src: local('iransans-300'),url("C:\xampp\htdocs\school_project\resources\assets\fonts/iransans/IRANSansWeb_Light.eot?") format("eot"),url("fonts/iransans/IRANSansWeb_Light.woff") format("woff"),url("fonts/iransans/IRANSansWeb_Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "iransans";
+    font-style: normal;
+    font-weight: bold;
+    src:local('iransans-bold'),url("fonts/iransans/IRANSansWeb_Bold.eot?") format("eot"), url("fonts/iransans/IRANSansWeb_Bold.woff") format("woff"), url("fonts/iransans/IRANSansWeb_Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "iransans";
+    font-style: normal;
+    font-weight: normal;
+    src:local('iransans') ,url("fonts/iransans/IRANSansWeb.eot?") format("eot"), url("fonts/iransans/IRANSansWeb.woff") format("woff"), url("fonts/iransans/IRANSansWeb.ttf") format("truetype");
+}
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a {
+    -webkit-transition: all .3s ease-in-out;
+    -moz-border-radius: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    text-decoration: none
+}
+a:hover,
+a:active,
+a:focus,
+a:visited {
+    text-decoration: none
+}
+ul {
+    margin: 0;
+    padding: 0
+}
+li {
+    list-style: none
+}
+img {
+    max-width: 100%
+}
+html {
+    font-size: 14px;
+    direction: rtl
+}
+
+input{
+    font-family: "iransans" !important;
+}
+body {
+    background: #fff;
+    direction: rtl;
+    text-align: right;
+    font-family: "iransans","vazir";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.toolbar{
+    background: linear-gradient(to right,#223260, #244580, #1e5faa);
+    color: #fff;
+    font-size: 16px;
+    padding: 15px 0px;
+}
+.toolbar span{
+    margin-right:15px;
+}
+.toolbar span a{
+    color: #fff;
+}
+.header{
+    background-color: #1b1e21;
+    min-height: 250px;
+}
+.header .logo{
+    margin-top: 15px;
+    width: 100%;
+}
+.header .title{
+    color: #fff;
+    margin-top: 75px;
+    font-size: 38px;
+    font-weight: bold;
+}
+.header .title span{
+    border-right: 3px solid #313691;
+    padding-right:15px;
+}
+.form form{
+    margin-top: 25px;
+}
+.form label{
+    display: block;
+}
+.form label input{
+    float: left;
+}
+.form label input[type="radio"]{
+    float: none;
+}
+.form textarea{
+    width: 100%;
+    min-height: 150px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.form .box{
+    margin: 25px 0;
+}
+.form select{
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.form .box label:nth-child(1){
+    font-weight: bold;
+}
+.form .pay{
+    margin-top: 25px;
+    font-size: 18px;
+}
+.form .pay label{
+    color: #f00;  
+}
+.form form input[type="submit"]{
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    color: #fff;
+    background: #34bb08;
+    margin: 5px auto 5px 0;
+    display: block;
+    cursor: pointer;
+}
+.form form input[type="submit"]:hover{
+    background: #278d05;
+}
+.form .sibli{
+
+}
+.form .sibli ul.dec{
+    border: 1px solid #000;
+    text-align: center;
+}
+.form .typepay{
+    padding: 15px 0;
+}
+.form .sibli ul.dec li{
+    display: inline-block;
+    border-left: 1px solid #000;
+}

@@ -12,13 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
 });
 
 
-Route::get('/sa',function (){
-    return 'salam';
-});
+Route::get('/from','formController@index');
+Route::post('/from','formController@storeData')->name('store_from');
 
 //Route::get('')
 
