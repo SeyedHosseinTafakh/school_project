@@ -158,7 +158,9 @@
                         <label>نام<input type="text" name="father-name"/></label>
                         <label>نام خانوادگی<input type="text" name="father-fammily"/></label>
                         <label>تلفن همراه<input type="text" name="father-phone"/></label>
+                        <label>کد ملی <input type="text" name="father-codemelli"/></label>
                         <label>شغل<input type="text" name="father-job"/></label>
+                        <label>میزان تحصیلات<input type="text" name="father-education"/></label>
                         <label>آدرس محل کار<input type="text" name="father-adress-job"/></label>
                         <label>تلفن محل کار<input type="text" name="father-adress-phone"/></label>
                     </div>
@@ -167,7 +169,9 @@
                         <label>نام<input type="text" name="mother-name"/></label>
                         <label>نام خانوادگی<input type="text" name="mother-fammily"/></label>
                         <label>تلفن همراه<input type="text" name="mother-phone"/></label>
+                        <label>کد ملی<input type="text" name="mother-codemelli"/></label>
                         <label>شغل<input type="text" name="mother-job"/></label>
+                        <label>میزان تحصیلات<input type="text" name="mother-education"/></label>
                         <label>آدرس محل کار<input type="text" name="mother-adress-job"/></label>
                         <label>تلفن محل کار<input type="text" name="mother-adress-phone"/></label>
                     </div>
@@ -214,7 +218,7 @@
                             <label for="zarinpal"><input type="radio" id="zarinpal" name="online" />انلاین</label>
                             <label for="huey"><input type="radio" id="huey" name="online" />پرداخت نقدی (چک یا کارت به کارت و ...)</label>
                         </div>
-                        <label>ایمیل (برای ارسال اطلاعات پرداخت) <input type="text"  style="float: none"/></label>
+                        <label>ایمیل (برای ارسال اطلاعات پرداخت) <input type="text" name="email" style="float: none"/></label>
                         <input type="submit" value="ثبت نام">
                     </div>
                 </div>
