@@ -19,7 +19,9 @@ Route::get('/', function () {
 Route::get('/from','formController@index');
 Route::post('/from','formController@storeData')->name('store_from');
 
-//Route::get('')
+
+Route::get('/admin','AdminControllerPanel@index');
+Route::post('/admin','AdminControllerPanel@login')->name('login');
 
 
 
