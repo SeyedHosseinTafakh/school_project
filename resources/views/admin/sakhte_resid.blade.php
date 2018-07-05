@@ -569,9 +569,8 @@
                                         <label>کدملی : <input type="text" name="studet_code_melli" required/></label>
                                         <label>مبلغ (تومان) : <input type="number" name="amount" required/></label>
                                         <label>توضیحات : <br/><textarea name="tozihat"></textarea></label>
-                                        <label>روش پرداخت: <br/><textarea name="ravesh"></textarea></label>
-                                        <label>پرداخت نشده  <input type="radio" name="statePay" value="false" checked /></label>
-                                        <label>پرداخت شده  <input type="radio" name="statePay" value="true"/></label>
+                                        <label>نقدی  <input type="radio" name="raveshPay" value="false" checked /></label>
+                                        <label>چکی  <input type="radio" name="raveshPay" value="true"/></label>
                                         <input type="submit" value="ثبت"/>
                                     </form>
                                 </div>

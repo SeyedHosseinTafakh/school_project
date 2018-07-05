@@ -23,8 +23,8 @@ class CreateResidsTable extends Migration
 //            $table->integer('nobate_pardakht');
             $table->string('tozihat');
             $table->date('tarikh_pardakht')->nullable();
-            $table->string('ravesh_pardakht')->nullable();
-            $table->boolean('status');
+            $table->boolean('ravesh_pardakht')->nullable();
+//            $table->boolean('status');
             $table->timestamps();
         });
     }

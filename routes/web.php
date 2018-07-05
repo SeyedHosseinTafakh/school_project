@@ -11,6 +11,8 @@
 |
 */
 
+use Symfony\Component\Console\Input\Input;
+//use Zarinpal\Zarinpal;
 Route::get('/', function () {
 //    return view('welcome');
 });
@@ -28,6 +30,9 @@ Route::get('/admin/resids','AdminControllerPanel@show_resids');
 Route::get('/admin/sakhtresids','AdminControllerPanel@sakht_resids');
 Route::post('/admin/sakhteresid','AdminControllerPanel@sakhte_resids')->name('login');
 
+route::get('/pardakht','formController@payement');
+route::post('/pardakht','formController@payment_r');
+route::get('/verif','formController@verify')->name('verif');
 
 
 
@@ -76,20 +81,20 @@ route::get('/1',function (\Zarinpal\Zarinpal $zarinpal){
 });
 
 
-
-route::get('/2',function (Zarinpal\Zarinpal $zarinpal){
-    $payment = [
-        'Authority' => Input::get('Authority'), // $_GET['Authority']
-        'Status'    => Input::get('Status'),    // $_GET['Status']
-        'Amount'    => 5000
-    ];
-    $response = $zarinpal->verify($payment);
-    if($response['Status'] === 100) {
-        return 'Payment was successful,
-        RefID: '.$response['RefID'].',
-        Message: '.$response['Message'];
-    }
-    return 'Error,
-    Status: '.$response['Status'].',
-    Message: '.$response['Message'];
-})->name('name');
+//
+//route::get('/2',function (Zarinpal\Zarinpal $zarinpal){
+//    $payment = [
+//        'Authority' => request('Authority'), // $_GET['Authority']
+//        'Status'    => request('Status'),    // $_GET['Status']
+//        'Amount'    => 5000
+//    ];
+//    $response = $zarinpal->verify($payment);
+//    if($response['Status'] === 100) {
+//        $answer = $response['message'].' شناسه پرداحت ' .$response['RefID'];
+//        return view('payement_answer' , compact($answer));
+//    }
+//    $error = 'عملیات موفقیت امیز نبود'.'\n'.$response['Status'].'\n'.$response['Message'];
+//    return 'Error,
+//    Status: '.$response['Status'].',
+//    Message: '.$response['Message'];
+//})->name('name');

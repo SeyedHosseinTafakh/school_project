@@ -570,7 +570,6 @@
                                             <th>روش پرداخت</th>
                                             <th>توضیحات</th>
                                             <th>مقدار پرداخت</th>
-                                            <th>وضعیت</th>
                                             <th>ویرایش</th>
                                         </tr>
 
@@ -580,7 +579,6 @@
                                                 <td>{{$resid->ravesh_pardakht}}</td>
                                                 <td>{{$resid->tozihat}}</td>
                                                 <td>{{$resid->amount}}</td>
-                                                <td>{{$resid->status}}</td>
                                                 <td><a href="{{url('')
 
                                             }}"> ویرایش</a> </td>

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\father;
 use App\mother;
 use App\student;
+use App\transaction;
 use Illuminate\Http\Request;
+use Zarinpal\Zarinpal;
 
 class formController extends Controller
 {
@@ -80,4 +82,75 @@ class formController extends Controller
         return 1;
 
     }
+
+
+
+    public function payement(){
+        return view('payment');
+    }
+    public function payment_r( Request $request, Zarinpal $zarinpal ){
+//        $zarinpal = \Zarinpal\Zarinpal::class;
+//        return 'hi';
+        $payment = [
+            'CallbackURL' => route('verif'), // Required
+            'Amount'      => $request->student_amount,                    // Required
+            'Description' => 'a short description',   // Required
+            'Email'       => $request->email ? $request->email : null,    // Optional
+            'Mobile'      => $request->phone ? $request->phone : null,           // Optional
+        ];
+//        return $payment;
+        $response = $zarinpal->request($payment);
+//        return $response;
+        if($response['Status'] === 100) {
+            $authority = $response['Authority'];
+            return $zarinpal->redirect($authority);
+        }
+
+        return 'Error,
+    Status: '.$response['Status'].',
+    Message: '.$response['Message'];
+    }
+
+//    public function verify()
+
+    public function verify(Zarinpal $zarinpal) {
+        $input = \request()->all();
+        $tr = transaction::where('Authority',$input['Authority'])->first();
+        $payment = [
+            'Authority' => \request('Authority'), // $_GET['Authority']
+            'Status'    => \request('Status'),    // $_GET['Status']
+            'Amount'    => $tr->amount,
+        ];
+        $response = $zarinpal->verify($payment);
+        if($response['Status'] === 100) {
+            $answer = $response['Message'];
+            return view('payement_answer',compact('answer'));
+//            return 'Payment was successful,
+//            RefID: '.$response['RefID'].',
+//            Message: '.$response['Message'];
+        }
+        $answer = $response['Message'];
+        return view('payement_answer' , compact('answer'));
+//        return 'Error,
+//        Status: '.$response['Status'].',
+//        Message: '.$response['Message'];
+    }
+//
+//    public function request(Zarinpal $zarinpal , Request $request) {
+//        $payment = [
+//            'CallbackURL' => route('name'), // Required
+//            'Amount'      => 5000,                    // Required
+//            'Description' => 'a short description',   // Required
+//            'Email'       => 'saeedp47@gmail.com',    // Optional
+//            'Mobile'      => '0933xxx7694'            // Optional
+//        ];
+//        $response = $zarinpal->request($payment);
+//        if($response['Status'] === 100) {
+//            $authority = $response['Authority'];
+//            return $zarinpal->redirect($authority);
+//        }
+//        return 'Error,
+//    Status: '.$response['Status'].',
+//    Message: '.$response['Message'];
+//    }
 }

@@ -57,24 +57,23 @@ class AdminControllerPanel extends Controller
         return view('admin.sakhte_resid');
     }
 
+
     public function sakhte_resids(Request $request){
         $studet = student::where('code_melli','1')->first();
         if (empty($studet)){
             return view('admin.show_resid');
         }
         $status = 0;
-        if ($request->statusPay == "true"){
+        if ($request->raveshPay == "true"){
             $status = 1;
         }
         $resid = [
             'amount'=>$request->amount,
             'tozihat'=>$request->tozihat,
-            'status'=>$status,
             'student_id'=>$studet->id,
-            'ravesh_pardakht'=>$request->ravesh ? $request->ravesh : null,
+            'ravesh_pardakht'=>$status,
         ];
         Resid::create($resid);
-        $resids = Resid::latest()->limit(20)->get();
-        return view('admin.show_resid',compact('resids'));
+        return redirect('/admin/resids');
     }
 }
