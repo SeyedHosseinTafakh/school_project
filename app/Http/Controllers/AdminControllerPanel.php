@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Resid;
+use App\student;
 use App\User;
+use function GuzzleHttp\Psr7\str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 
@@ -20,7 +24,10 @@ class AdminControllerPanel extends Controller
 //            }
 //            if ($user->password === $pass){
                 //TODO::have to make admin panel for this part
-                return view('admin.index_panel');
+                $users = student::latest()->get();
+//                $users = DB::table('stude')
+//                return $users[0]->payments;
+                return view('admin.index_panel',compact('users'));
 //            }
         }
         return view('admin.login');
@@ -38,5 +45,36 @@ class AdminControllerPanel extends Controller
 //        $values = $request->session()->get('password');
 
         return "view is not ready yet";
+    }
+
+
+    public function show_resids(){
+        $resids = DB::table('resids')->limit(20)->get();
+        return view('admin.show_resid',compact('resids'));
+    }
+
+    public function sakht_resids(){
+        return view('admin.sakhte_resid');
+    }
+
+    public function sakhte_resids(Request $request){
+        $studet = student::where('code_melli','1')->first();
+        if (empty($studet)){
+            return view('admin.show_resid');
+        }
+        $status = 0;
+        if ($request->statusPay == "true"){
+            $status = 1;
+        }
+        $resid = [
+            'amount'=>$request->amount,
+            'tozihat'=>$request->tozihat,
+            'status'=>$status,
+            'student_id'=>$studet->id,
+            'ravesh_pardakht'=>$request->ravesh ? $request->ravesh : null,
+        ];
+        Resid::create($resid);
+        $resids = Resid::latest()->limit(20)->get();
+        return view('admin.show_resid',compact('resids'));
     }
 }

@@ -4102,6 +4102,7 @@ input[type="button"].btn-block {
 .card {
   position: relative;
   display: flex;
+  direction: rtl;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;

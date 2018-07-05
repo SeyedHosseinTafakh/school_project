@@ -44,6 +44,10 @@ class CreateStudentsTable extends Migration
             $table->string('phone_zaroori_sabet');
             $table->string('phone_zaroori_hamrah');
             $table->string('phone_zaroori_nesbat_ba_daneshamooz');
+
+            $table->integer('father_id');
+            $table->integer('mother_id');
+
             $table->timestamps();
         });
     }

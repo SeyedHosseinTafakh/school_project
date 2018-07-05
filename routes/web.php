@@ -24,6 +24,11 @@ Route::get('/admin','AdminControllerPanel@index');
 Route::post('/admin','AdminControllerPanel@login')->name('login');
 
 
+Route::get('/admin/resids','AdminControllerPanel@show_resids');
+Route::get('/admin/sakhtresids','AdminControllerPanel@sakht_resids');
+Route::post('/admin/sakhteresid','AdminControllerPanel@sakhte_resids')->name('login');
+
+
 
 
 

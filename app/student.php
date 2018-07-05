@@ -12,4 +12,9 @@ class student extends Model
         'phone_zaroori_sabet','phone_zaroori_hamrah',
         'phone_zaroori_nesbat_ba_daneshamooz',
         'shenasname_harf','shenasname_adad','shenasname_raghami'];
+
+
+    public function payments(){
+        return $this->hasMany('App\Resid','student_id');
+    }
 }
